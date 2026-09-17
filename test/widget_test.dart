@@ -204,7 +204,7 @@ void main() {
       );
 
       // Kategori seçimi
-      await tester.tap(find.text('Kategori seçin'));
+      await tester.tap(find.byType(DropdownButtonFormField<int>));
       await tester.pumpAndSettle();
       await tester.tap(find.text('Maaş').last);
       await tester.pumpAndSettle();
@@ -212,20 +212,39 @@ void main() {
       // "Kaydet" butonu formun altında kalabilir; kaydırmadan sonra tıklanır.
       await tester.ensureVisible(find.widgetWithText(FilledButton, 'Kaydet'));
       await tester.pumpAndSettle();
-      await tester.tap(find.widgetWithText(FilledButton, 'Kaydet'));
+      await tester.tap(
+        find.widgetWithText(FilledButton, 'Kaydet'),
+        warnIfMissed: false,
+      );
       await tester.pumpAndSettle();
 
-      // Ana ekrana dönüldü ve kayıt son hareketler listesinde.
-      expect(find.text('Harcama Takip'), findsOneWidget);
-      expect(find.text('UI testi açıklaması'), findsOneWidget);
-      expect(find.textContaining(belgeNo), findsOneWidget);
-
-      // Kaydedilen tutar veritabanında doğru okunuyor.
+      // Kayıt veritabanına yazıldı.
       final List<Hareket> kayitlar = await VeritabaniYardimcisi.ornek
           .hareketleriGetir(HareketTuru.gelir, arama: belgeNo);
       expect(kayitlar, hasLength(1));
       expect(kayitlar.first.tutar, closeTo(1500.75, 0.001));
       expect(kayitlar.first.kategoriAd, 'Maaş');
+      expect(kayitlar.first.aciklama, 'UI testi açıklaması');
+
+      // Son hareketler listesi de bu kaydı içermeli.
+      final List<Hareket> sonHareketler =
+          await VeritabaniYardimcisi.ornek.sonHareketler(5);
+      expect(
+        sonHareketler.any((Hareket h) => h.aciklama == 'UI testi açıklaması'),
+        isTrue,
+      );
+
+      // Form kapanıp ana ekrana dönüldü ve kayıt son hareketler listesinde.
+      expect(find.text('Harcama Takip'), findsOneWidget);
+      // Son hareket kartı görünüm alanının dışında kalabilir; görünür yap.
+      await tester.scrollUntilVisible(
+        find.text('UI testi açıklaması'),
+        80,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('UI testi açıklaması'), findsOneWidget);
+      expect(find.textContaining(belgeNo), findsOneWidget);
 
       await testKaydiniSil(belgeNo);
     },

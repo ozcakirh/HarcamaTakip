@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="zemin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B2E66"/>
+      <stop offset="55%" stop-color="#14509E"/>
+      <stop offset="100%" stop-color="#2C79D0"/>
+    </linearGradient>
+    <linearGradient id="cuzdan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E3EDFA"/>
+    </linearGradient>
+    <linearGradient id="yesilOk" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4FD08A"/>
+      <stop offset="100%" stop-color="#35AC6A"/>
+    </linearGradient>
+    <filter id="golge" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#04173A" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Arka plan -->
+  <rect width="1024" height="1024" fill="url(#zemin)"/>
+
+  <!-- Hafif doku: köşe parlaması -->
+  <circle cx="880" cy="150" r="300" fill="#FFFFFF" opacity="0.06"/>
+  <circle cx="140" cy="900" r="260" fill="#FFFFFF" opacity="0.05"/>
+
+  <!-- Cüzdan gövdesi -->
+  <g filter="url(#golge)">
+    <rect x="196" y="300" width="632" height="424" rx="72" fill="url(#cuzdan)"/>
+    <!-- Cüzdan kapağı (üst şerit) -->
+    <path d="M196 372 a72 72 0 0 1 72 -72 h488 a72 72 0 0 1 72 72 v40 H196 z" fill="#2C79D0" opacity="0.22"/>
+    <!-- Kilit / toka -->
+    <rect x="640" y="452" width="188" height="120" rx="60" fill="#14509E"/>
+    <circle cx="734" cy="512" r="26" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Gelir oku (yeşil, yukarı-sağ) -->
+  <g transform="translate(300 250)">
+    <path d="M0 150 L150 0" stroke="url(#yesilOk)" stroke-width="46" stroke-linecap="round"/>
+    <path d="M150 0 L150 96 M150 0 L54 0" stroke="url(#yesilOk)" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Gider oku (gri, aşağı-sol) -->
+  <g transform="translate(560 560)">
+    <path d="M0 0 L150 150" stroke="#B8C3CA" stroke-width="46" stroke-linecap="round"/>
+    <path d="M150 150 L150 54 M150 150 L54 150" stroke="#B8C3CA" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>

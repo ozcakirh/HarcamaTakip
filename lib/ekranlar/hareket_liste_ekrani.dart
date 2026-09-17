@@ -150,6 +150,7 @@ class HareketListeEkraniDurumu extends State<HareketListeEkrani> {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
+        heroTag: 'fab_${widget.tur.kod}',
         onPressed: _yeniEkle,
         backgroundColor: palet.ana,
         foregroundColor: Colors.white,
