@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "strictness": "strict",
+    "allow": [
+      "Bash(cd \"C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\"; flutter create --org com.ozcak --project-name harcama_takip --platforms android,ios,windows . 2>&1 | Select-Object -Last 25)",
+      "Bash(cd \"C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\"; flutter pub add sqflite path intl sqflite_common_ffi 2>&1 | Select-Object -Last 25)",
+      "Bash(cd \"C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\"; flutter pub get 2>&1 | Select-Object -Last 15)",
+      "Bash(cd \"C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\"; flutter pub get 2>&1 | Select-Object -Last 8)",
+      "Bash(cd \"C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\"; flutter --version 2>&1)",
+      "Bash(cd \"C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\"; flutter test 2>&1 | Select-Object -Last 40)",
+      "Bash(cd \"C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\"; flutter analyze 2>&1 | Select-Object -Last 15; Write-Output \"=== TEST ===\"; flutter test 2>&1 | Select-Object -Last 45)",
+      "Bash(cd \"C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\"; flutter test --plain-name \"Form ile gelir\" 2>&1 | Select-Object -First 60)",
+      "Bash(taskkill /PID 25212 /F 2>&1 | Out-Null; cd \"C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\"; flutter test > \"$env:TEMP\\ht_test.log\" 2>&1; Write-Output \"exit=$LASTEXITCODE\"; Select-String -Path \"$env:TEMP\\ht_test.log\" -Pattern \"EXCEPTION|The following|Expected:|Actual:|Which:|TestFailure|was thrown\" | Select-Object -First 25)",
+      "Bash(cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter test 2>&1 | Select-Object -Last 40)",
+      "Bash(cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter test --plain-name \"Form ile gelir kaydı ekleniyor ve ana ekranda son hareketlerde görünüyor\" 2>&1 | Select-Object -First 80)",
+      "Bash(Start-Sleep -Seconds 20; Get-Content C:\\Users\\ozcak\\AppData\\Local\\Temp\\codellm-364c_1_4.log -Tail 60)",
+      "Bash(Get-Content C:\\Users\\ozcak\\AppData\\Local\\Temp\\codellm-364c_1_4.log -Tail 100)",
+      "Bash(taskkill /PID 22660 /F 2>&1; Start-Sleep -Seconds 2; cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter test --plain-name \"Form ile gelir kaydı ekleniyor ve ana ekranda son hareketlerde görünüyor\" *> test_tek.log; Get-Content test_tek.log -TotalCount 120)",
+      "Bash(Get-Process | Where-Object { $_.ProcessName -match 'dart|flutter' } | Select-Object Id, ProcessName | Format-Table -AutoSize)",
+      "Bash(Stop-Process -Id 26504,7940,26300,22924 -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 3; Get-Process | Where-Object { $_.ProcessName -match 'dart|flutter' } | Select-Object Id, ProcessName)",
+      "Bash(cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter clean 2>&1 | Select-Object -Last 5; flutter pub get 2>&1 | Select-Object -Last 5)",
+      "Bash(cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter test 2>&1 | Select-Object -Last 30)",
+      "Bash(cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter test --plain-name \"Form ile gelir kaydı ekleniyor ve ana ekranda son hareketlerde görünüyor\" 2>&1 | Select-Object -First 120)",
+      "Bash(Get-Content C:\\Users\\ozcak\\AppData\\Local\\Temp\\codellm-364c_2_7.log -Tail 50)",
+      "Bash(Start-Sleep -Seconds 30; Get-Content C:\\Users\\ozcak\\AppData\\Local\\Temp\\codellm-364c_2_7.log -Tail 60)",
+      "Bash(taskkill /PID 18048 /F 2>&1; Start-Sleep -Seconds 2; Get-Process | Where-Object { $_.ProcessName -match 'dart|flutter' } | Select-Object Id, ProcessName)",
+      "Bash(Stop-Process -Id 22252,26368,23212,8848 -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 2; Get-Process | Where-Object { $_.ProcessName -match 'dart|flutter' } | Select-Object Id, ProcessName)",
+      "Bash(cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter test test/widget_test.dart --plain-name \"Form ile gelir kaydı ekleniyor ve ana ekranda son hareketlerde görünüyor\" *> test_tek.log 2>&1; Write-Output \"EXIT:$LASTEXITCODE\"; Get-Content test_tek.log -TotalCount 200)",
+      "Bash(Get-Content C:\\Users\\ozcak\\AppData\\Local\\Temp\\codellm-364c_3_4.log -Tail 30)",
+      "Bash(Get-Content C:\\Users\\ozcak\\AppData\\Local\\Temp\\codellm-364c_3_4.log -Tail 100; Write-Output \"---\"; Test-Path C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip\\test_tek.log)",
+      "Bash(taskkill /PID 20096 /F 2>&1; Get-Process | Where-Object { $_.ProcessName -match 'dart|flutter' } | Stop-Process -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 3; Get-Process | Where-Object { $_.ProcessName -match 'dart|flutter' } | Select-Object Id, ProcessName)",
+      "Bash(cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter test --plain-name \"Form ile gelir kaydı ekleniyor ve ana ekranda son hareketlerde görünüyor\" 2>&1 | Select-Object -First 150)",
+      "Bash(Start-Sleep -Seconds 25; Get-Content C:\\Users\\ozcak\\AppData\\Local\\Temp\\codellm-364c_4_4.log -Tail 80)",
+      "Bash(Start-Sleep -Seconds 60; Get-Content C:\\Users\\ozcak\\AppData\\Local\\Temp\\codellm-364c_4_4.log -Tail 60)",
+      "Bash(Start-Sleep -Seconds 90; Get-Content C:\\Users\\ozcak\\AppData\\Local\\Temp\\codellm-364c_4_4.log -Tail 60)",
+      "Bash(cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter test 2>&1 | Select-Object -Last 25)",
+      "Bash(cd C:\\A_YapayZeka_Asistan_Sureclerim\\Abacus.AI\\HarcamaTakip; flutter test --plain-name \"Form ile gelir kaydı ekleniyor ve ana ekranda son hareketlerde görünüyor\" 2>&1 | Select-Object -First 90)"
+    ]
+  }
+}
